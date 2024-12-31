@@ -1,0 +1,5 @@
+ffmpeg -i input.mp4 -c:v prores -profile:v 1 -threads 16 output-PRORES.mov
+
+
+# GPU accelerated decode Prores
+ffmpeg -hwaccel cuda -c:v h264_cuvid -i input.mp4 -c:v prores -profile:v 1 -threads 16 output-PRORES.mp4

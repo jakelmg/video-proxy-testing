@@ -1,0 +1,1 @@
+ffmpeg -hwaccel cuda -c:v h264_cuvid -i input.mp4 -c:v h264_nvenc -g 1 -bf 0 -preset fast -b:v 100M output-INTRAH264.mp4
