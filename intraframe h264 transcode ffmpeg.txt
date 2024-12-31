@@ -1,1 +1,7 @@
 ffmpeg -hwaccel cuda -c:v h264_cuvid -i input.mp4 -c:v h264_nvenc -g 1 -bf 0 -preset fast -b:v 100M output-INTRAH264.mp4
+
+
+# limited to 30fps 100mbit
+
+ffmpeg -hwaccel cuda -c:v h264_cuvid -i '.\2024-12-17 14-29-08.mkv' -c:v h264_nvenc -g 1 -bf 0 -b:v 100M -preset fast -filter:v fps=30 '2024-12-17 14-29-08-INTRAFRAME-30FPS.mov'
+^ ps u can also use server path over smb :D

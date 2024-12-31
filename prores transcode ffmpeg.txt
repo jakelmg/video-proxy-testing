@@ -3,3 +3,9 @@ ffmpeg -i input.mp4 -c:v prores -profile:v 1 -threads 16 output-PRORES.mov
 
 # GPU accelerated decode Prores
 ffmpeg -hwaccel cuda -c:v h264_cuvid -i input.mp4 -c:v prores -profile:v 1 -threads 16 output-PRORES.mp4
+
+
+
+# GPU accelerated decode H264 > encode Prores PROXY. Limited to 30FPS.
+ffmpeg -hwaccel cuda -c:v h264_cuvid -i '.\2024-12-18 14-20-09.mkv' -c:v prores -profile:v 0 -threads 16 -filter:v fps=30 '2024-12-18 14-20-09-PRORES-30FPS.mov'
+^ ps u can also use server path over smb :D
